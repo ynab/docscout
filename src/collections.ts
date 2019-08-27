@@ -1,5 +1,3 @@
-import merge from 'lodash/merge'
-
 import { get } from './request'
 import { VisibilityParameter } from './types/helpscout-docs/common'
 import { ListCollectionsResponse, GetCollectionResponse, Collection } from './types/helpscout-docs'
