@@ -8,10 +8,13 @@
   "license": "Apache-2.0",
   "private": true,
   "devDependencies": {
+    "@types/node": "^12.7.2",
+    "dotenv": "^8.1.0",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "got": "^9.6.0"
+    "got": "^9.6.0",
+    "lodash": "^4.17.15"
   }
 }
