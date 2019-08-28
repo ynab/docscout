@@ -1,5 +1,6 @@
 import {
   ArticleStatus,
+  GetArticleResponse,
   GetRevisionResponse,
   ListArticlesResponse,
   ListRelatedArticlesResponse,
@@ -14,7 +15,7 @@ type ArticleStatusParameter = 'all' | ArticleStatus
 
 type ArticleSortParameter = 'number' | 'status' | 'name' | 'popularity' | 'createdAt' | 'updatedAt'
 
-interface ListArticlesOptions {
+export interface ListArticlesOptions {
   page?: number
   status?: ArticleStatusParameter
   sort?: ArticleSortParameter
@@ -42,7 +43,7 @@ export async function listArticlesInCategory(
   return response.body
 }
 
-interface SearchArticlesOptions {
+export interface SearchArticlesOptions {
   page?: number
   query: string
   collectionId?: string
@@ -57,7 +58,7 @@ export async function searchArticles(apiToken: string, options: SearchArticlesOp
   return response.body
 }
 
-interface ListRelatedArticlesOptions {
+export interface ListRelatedArticlesOptions {
   page?: number
   status?: ArticleStatusParameter
   sort?: ArticleSortParameter
@@ -74,7 +75,7 @@ export async function listRelatedArticles(
   return response.body
 }
 
-interface ListRevisionsOptions {
+export interface ListRevisionsOptions {
   page?: number
 }
 
@@ -84,7 +85,7 @@ export async function listRevisions(apiToken: string, articleId: string, options
   return response.body
 }
 
-interface GetArticleOptions {
+export interface GetArticleOptions {
   draft?: boolean
 }
 
@@ -94,7 +95,7 @@ export async function getArticle(
   options?: GetArticleOptions
 ) {
   const path = `/articles/${articleIdOrNumber}`
-  const response = await get<ListRevisionsResponse>(apiToken, path, options)
+  const response = await get<GetArticleResponse>(apiToken, path, options)
   return response.body
 }
 
