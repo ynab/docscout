@@ -18,6 +18,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "form-data": "^2.5.0",
     "got": "^9.6.0",
     "lodash": "^4.17.15"
   }
