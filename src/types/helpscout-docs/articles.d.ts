@@ -64,7 +64,7 @@ export type ArticleRevision = ArticleRevisionRef & {
 //
 
 interface ArticlesCollectionResponse<T> {
-  articles: T
+  articles: ItemsCollectionEnvelope<T>
 }
 
 export type ListArticlesResponse = ArticlesCollectionResponse<ArticleRef>

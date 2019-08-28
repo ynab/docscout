@@ -1,4 +1,4 @@
-import { DateTime, CollectionEnvelope } from './common'
+import { DateTime, ItemsCollectionEnvelope } from './common'
 
 // https://developer.helpscout.com/docs-api/objects/category/
 export interface Category {
@@ -15,7 +15,7 @@ export interface Category {
 }
 
 export interface ListCategoriesResponse {
-  categories: CollectionEnvelope<Category>
+  categories: ItemsCollectionEnvelope<Category>
 }
 
 export interface GetCategoryResponse {
