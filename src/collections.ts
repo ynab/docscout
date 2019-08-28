@@ -46,7 +46,7 @@ export async function listAllCollections(apiToken: string, options?: ListAllcoll
   return collections
 }
 
-export async function getCollection(apiToken: string, idOrNumber: string | number) {
-  const response = await get<GetCollectionResponse>(apiToken, `/collections/${idOrNumber}`)
+export async function getCollection(apiToken: string, collectionIdOrNumber: string | number) {
+  const response = await get<GetCollectionResponse>(apiToken, `/collections/${collectionIdOrNumber}`)
   return response.body
 }
