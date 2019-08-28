@@ -8,6 +8,8 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf lib",
+    "compile": "yarn clean && tsc",
     "test-run": "ts-node -r dotenv/config scripts/test-run.ts"
   },
   "devDependencies": {
