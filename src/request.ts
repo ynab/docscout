@@ -1,6 +1,7 @@
 import got from 'got'
 import merge from 'lodash/merge'
 import * as http from 'http'
+import { Readable } from 'stream'
 
 interface InternalRequestOptions extends http.RequestOptions {
   // Redeclare options with `any` type for allow specify types incompatible with http.RequestOptions.
@@ -8,20 +9,28 @@ interface InternalRequestOptions extends http.RequestOptions {
   agent?: any
 }
 
-interface GotOptions extends InternalRequestOptions {
+// https://www.npmjs.com/package/got#goturl-options
+interface GotOptions {
+  url?: string | http.RequestOptions
+  options?: http.RequestOptions
   baseUrl?: string
+  headers?: http.OutgoingHttpHeaders
+  stream?: boolean
+  body?: string | Buffer | Readable | FormData | object
   cookieJar?: any
   encoding?: string | null
-  query?: Record<string, any> | URLSearchParams | string
+  form?: boolean
+  json?: boolean
+  query?: string | Record<string, any> | URLSearchParams
   timeout?: number | any
   retry?: number | any
   followRedirect?: boolean
   decompress?: boolean
+  cache?: Cache
   useElectronNet?: boolean
   throwHttpErrors?: boolean
   agent?: http.Agent | boolean
-  cache?: Cache
-  request?: typeof http.request
+  hooks?: Record<string, Function[]>
 }
 
 interface Response<T> {
@@ -55,5 +64,11 @@ export async function get<T>(apiToken: string, path: string, params?: any): Prom
   const query = new URLSearchParams(params)
   const options = requestOptions(apiToken, { query })
   const response: Response<T> = await got.get(path, options)
+  return response
+}
+
+export async function post<T>(apiToken: string, path: string, body?: any): Promise<Response<T>> {
+  const options = requestOptions(apiToken, { body })
+  const response: Response<T> = await got.post(path, options)
   return response
 }
