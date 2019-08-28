@@ -13,8 +13,6 @@ $ npm install docscout
 
 ### Functional
 
-Each
-
 ```js
 import { listCollections } from 'docscout/collections'
 
