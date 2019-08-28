@@ -1,7 +1,6 @@
 # DocScout
 
-> NodeJS client for HelpScout Docs API
-> https://developer.helpscout.com/docs-api/
+> NodeJS client for [HelpScout Docs API](https://developer.helpscout.com/docs-api/) written in TypeScript
 
 ## Install
 
