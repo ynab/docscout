@@ -51,7 +51,7 @@ function requestOptions(apiToken: string, options: Partial<GotOptions>): Options
   )
 }
 
-export async function get<T>(apiToken: string, path: string, params: any): Promise<Response<T>> {
+export async function get<T>(apiToken: string, path: string, params?: any): Promise<Response<T>> {
   const query = new URLSearchParams(params)
   const options = requestOptions(apiToken, { query })
   const response: Response<T> = await got.get(path, options)

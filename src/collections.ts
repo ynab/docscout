@@ -1,16 +1,19 @@
 import { get } from './request'
-import { VisibilityParameter } from './types/helpscout-docs/common'
-import { ListCollectionsResponse, GetCollectionResponse, Collection } from './types/helpscout-docs'
+import {
+  ListCollectionsResponse,
+  GetCollectionResponse,
+  Collection,
+  OrderParameter,
+  VisibilityParameter
+} from './types/helpscout-docs'
 
-export type SortParamater = 'number' | 'visibility' | 'order' | 'name' | 'createdAt' | 'updatedAt'
-
-export type OrderParameter = 'asc' | 'desc'
+export type CollectionSortParameter = 'number' | 'visibility' | 'order' | 'name' | 'createdAt' | 'updatedAt'
 
 export interface ListCollectionsOptions {
   page?: number
   siteId?: string
   visibility?: VisibilityParameter
-  sort?: SortParamater
+  sort?: CollectionSortParameter
   order?: OrderParameter
 }
 
@@ -22,7 +25,7 @@ export async function listCollections(apiToken: string, options?: ListCollection
 export interface ListAllcollectionsOptions {
   siteId?: string
   visibility?: VisibilityParameter
-  sort?: SortParamater
+  sort?: CollectionSortParameter
   order?: OrderParameter
 }
 
@@ -44,6 +47,6 @@ export async function listAllCollections(apiToken: string, options?: ListAllcoll
 }
 
 export async function getCollection(apiToken: string, idOrNumber: string | number) {
-  const response = await get<GetCollectionResponse>(apiToken, `/collections/${idOrNumber}`, null)
+  const response = await get<GetCollectionResponse>(apiToken, `/collections/${idOrNumber}`)
   return response.body
 }

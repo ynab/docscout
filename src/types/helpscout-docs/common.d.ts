@@ -2,8 +2,6 @@ export type DateTime = string
 
 export type Visibility = 'public' | 'private'
 
-export type VisibilityParameter = 'all' | Visibility
-
 export interface ItemsCollectionEnvelope<T> {
   page: number
   pages: number
@@ -21,3 +19,7 @@ export interface Person {
   firstName: string
   lastName: string
 }
+
+export type OrderParameter = 'asc' | 'desc'
+
+export type VisibilityParameter = 'all' | Visibility

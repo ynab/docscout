@@ -73,7 +73,7 @@ export type SearchArticlesResponse = ArticlesCollectionResponse<ArticleSearch>
 
 export type ListRelatedArticlesResponse = ArticlesCollectionResponse<ArticleRef>
 
-export interface ListRevisions {
+export interface ListRevisionsResponse {
   revisions: ItemsCollectionEnvelope<ArticleRevisionRef>
 }
 
