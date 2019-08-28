@@ -58,7 +58,7 @@ const apiToken = process.env.HELPSCOUT_DOCS_API_TOKEN;
 
 ## API
 
-> Version 1 of this client focuses on fetching data, i.e. the API Reads.
+> Version 1 of this client focuses on fetching data, i.e. the API Reads.  
 > We'll happily welcome your PRs to improve this client.
 
 ### Articles
