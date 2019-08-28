@@ -67,63 +67,89 @@ const apiToken = process.env.HELPSCOUT_DOCS_API_TOKEN;
 
 ##### In Collection
 
-`listArticlesInCollection( apiToken: string, collectionId: string, options?: ListArticleOptions )`
+```ts
+listArticlesInCollection( apiToken: string, collectionId: string, options?: ListArticleOptions )
+```
 
 ##### In Category
 
-`listArticlesInCategory( apiToken: string, categoryId: string, options?: ListArticleOptions )`
+```ts
+listArticlesInCategory( apiToken: string, categoryId: string, options?: ListArticleOptions )
+```
 
 #### Search Articles |  [Docs](https://developer.helpscout.com/docs-api/articles/search/)
 
-`searchArticles( apiToken: string, options: SearchArticlesOptions )`
+```ts
+searchArticles( apiToken: string, options: SearchArticlesOptions )
+```
 
 #### List Related Articles | [Docs](https://developer.helpscout.com/docs-api/articles/list-related/)
 
-`listRelatedArticles( apiToken: string, articleId: string, options?: ListRelatedArticlesOptions )`
+```ts
+listRelatedArticles( apiToken: string, articleId: string, options?: ListRelatedArticlesOptions )
+```
 
 #### List Revisions | [Docs](https://developer.helpscout.com/docs-api/articles/revisions/list/)
 
-`listRevisions( apiToken: string, articleId: string, options?: ListRevisionsOptions )`
+```ts
+listRevisions( apiToken: string, articleId: string, options?: ListRevisionsOptions )
+```
 
 #### Get Article | [Docs](https://developer.helpscout.com/docs-api/articles/get/)
 
-`getArticle( apiToken: string, articleIdOrNumber: string | number, options?: GetArticleOptions )`
+```ts
+getArticle( apiToken: string, articleIdOrNumber: string | number, options?: GetArticleOptions )
+```
 
 #### Get Revision | [Docs](https://developer.helpscout.com/docs-api/articles/revisions/get/)
 
-`getRevision( apiToken: string, revisionId: string )`
+```ts
+getRevision( apiToken: string, revisionId: string )
+```
 
 ### Assets | [Source Code](src/assets.ts)
 
 #### Create Article Asset | [Docs](https://developer.helpscout.com/docs-api/assets/create-article/)
 
-`createArticleAsset( apiToken: string, options: CreateArticleAssetOptions )`
+```ts
+createArticleAsset( apiToken: string, options: CreateArticleAssetOptions )
+```
 
 ### Categories | [Source Code](src/categories.ts)
 
 #### List Categories | [Docs](https://developer.helpscout.com/docs-api/categories/list/)
 
-`listCategories( apiToken: string, collectionId: string, options?: ListCategoriesOptions )`
+```ts
+listCategories( apiToken: string, collectionId: string, options?: ListCategoriesOptions )
+```
 
 #### Get Category | [Docs](https://developer.helpscout.com/docs-api/categories/get/)
 
-`getCategory( apiToken: string, categoryIdOrNumber: string | number )`
+```ts
+getCategory( apiToken: string, categoryIdOrNumber: string | number )
+```
 
 ### Collections | [Source Code](src/collections.ts)
 
 #### List Collections | [Docs](https://developer.helpscout.com/docs-api/collections/list/)
 
-`listCollections( apiToken: string, options?: ListCollectionsOptions )`
+```ts
+listCollections( apiToken: string, options?: ListCollectionsOptions )
+```
 
 #### Get Collection | [Docs](https://developer.helpscout.com/docs-api/collections/get/)
 
-`getCollection( apiToken: string, collectionIdOrNumber: string | number )`
+```ts
+getCollection( apiToken: string, collectionIdOrNumber: string | number )
+```
 
 ### Sites | [Source Code](src/sites.ts)
 
 #### List Sites | [Docs](https://developer.helpscout.com/docs-api/sites/list/)
 
-`listSites( apiToken: string, options?: ListSitesOptions )`
+```ts
+listSites( apiToken: string, options?: ListSitesOptions )
+```
 
 ## License
 
