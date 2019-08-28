@@ -1,9 +1,9 @@
 {
-  "name": "docguard",
+  "name": "docscout",
   "version": "1.0.0",
   "description": "NodeJS client for HelpScout Docs API",
   "main": "src/index.ts",
-  "repository": "https://github.com/ynab/docguard",
+  "repository": "https://github.com/ynab/docscout",
   "author": "You Need a Budget, LLC",
   "license": "Apache-2.0",
   "private": true,
