@@ -9,8 +9,9 @@ if (apiToken) {
       const client = new DocsClient(apiToken)
       const publicCollectionsEnvelope = await client.listCollections({ visibility: 'public' })
       const publicCollections = publicCollectionsEnvelope.items
+      printObject(publicCollections)
+
       const firstPublicCollection = publicCollections[0]
-      printObject(firstPublicCollection)
       const articlesEnvelope = await client.listArticlesInCollection(firstPublicCollection.id, {
         status: 'published',
         sort: 'updatedAt',

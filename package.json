@@ -2,14 +2,16 @@
   "name": "docscout",
   "version": "1.0.0",
   "description": "NodeJS client for HelpScout Docs API",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/ynab/docscout",
   "author": "You Need a Budget, LLC",
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
     "clean": "rm -rf lib",
-    "compile": "yarn clean && tsc",
+    "compile": "yarn clean && tsc && yarn copy:declarations",
+    "copy:declarations": "cp -R ./src/types ./lib/types",
     "test-run": "ts-node -r dotenv/config scripts/test-run.ts"
   },
   "devDependencies": {
