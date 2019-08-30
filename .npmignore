@@ -1,5 +1,6 @@
 /.vscode/
 /scripts/
+/src/
 /typings/
 .editorconfig
 tsconfig.json
