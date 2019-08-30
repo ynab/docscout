@@ -9,8 +9,9 @@
   "license": "Apache-2.0",
   "scripts": {
     "clean": "rm -rf dist",
-    "compile": "yarn clean && tsc && yarn copy:declarations",
+    "build": "yarn clean && tsc && yarn copy:declarations",
     "copy:declarations": "cp -R ./src/types ./dist/types",
+    "release": "ts-node scripts/release.ts",
     "test-run": "ts-node -r dotenv/config scripts/test-run.ts"
   },
   "devDependencies": {
