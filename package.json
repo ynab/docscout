@@ -2,6 +2,12 @@
   "name": "docscout",
   "version": "1.0.0",
   "description": "NodeJS client for HelpScout Docs API",
+  "keywords": [
+    "helpscout",
+    "helpscout-docs",
+    "nodejs",
+    "typescript"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/ynab/docscout",
