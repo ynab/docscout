@@ -23,7 +23,6 @@ exec(`sed -i '' 's/version": "${currentVersion}"/version": "${nextVersion}"/g' p
 exec(`git commit -m "Release ${tagName}"`)
 exec(`git tag ${tagName}`)
 exec(`git push && git push --tags`)
-exec(`hub release create ${tagName}`)
 
 function getCurrentVersion() {
   const packageData = require('../package.json')
