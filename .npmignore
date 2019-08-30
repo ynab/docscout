@@ -1,0 +1,7 @@
+/.vscode/
+/scripts/
+/typings/
+.editorconfig
+tsconfig.json
+yarn.lock
+
