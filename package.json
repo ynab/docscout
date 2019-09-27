@@ -1,6 +1,6 @@
 {
   "name": "docscout",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeJS client for HelpScout Docs API",
   "keywords": [
     "helpscout",

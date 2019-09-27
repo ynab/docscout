@@ -20,6 +20,7 @@ const tagName = `v${nextVersion}`
 exec('yarn build')
 exec('git add dist/*')
 exec(`sed -i '' 's/version": "${currentVersion}"/version": "${nextVersion}"/g' package.json`)
+exec('git add package.json')
 exec(`git commit -m "Release ${tagName}"`)
 exec(`git tag ${tagName}`)
 exec(`git push && git push --tags`)
