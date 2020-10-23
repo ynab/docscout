@@ -18,7 +18,7 @@ export interface ListCollectionsOptions {
 }
 
 export async function listCollections(apiToken: string, options?: ListCollectionsOptions) {
-  const response = await get<ListCollectionsResponse>(apiToken, '/collections', options)
+  const response = await get<ListCollectionsResponse>(apiToken, 'collections', options)
   return response.body
 }
 
@@ -47,6 +47,6 @@ export async function listAllCollections(apiToken: string, options?: ListAllcoll
 }
 
 export async function getCollection(apiToken: string, collectionIdOrNumber: string | number) {
-  const response = await get<GetCollectionResponse>(apiToken, `/collections/${collectionIdOrNumber}`)
+  const response = await get<GetCollectionResponse>(apiToken, `collections/${collectionIdOrNumber}`)
   return response.body
 }

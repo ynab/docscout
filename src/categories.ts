@@ -14,7 +14,7 @@ export async function listCategories(
   collectionId: string,
   options?: ListCategoriesOptions
 ) {
-  const path = `/collections/${collectionId}/categories`
+  const path = `collections/${collectionId}/categories`
   const response = await get<ListCategoriesResponse>(apiToken, path, options)
   return response.body
 }
@@ -42,7 +42,7 @@ async function listAllCategories(apiToken: string, collectionId: string, options
 }
 
 export async function getCategory(apiToken: string, categoryIdOrNumber: string | number) {
-  const path = `/categories/${categoryIdOrNumber}`
+  const path = `categories/${categoryIdOrNumber}`
   const response = await get<GetCategoryResponse>(apiToken, path)
   return response.body
 }

@@ -41,7 +41,7 @@ export async function createArticleAsset(apiToken: string, options: CreateArticl
     form.append('fileName', options.fileName)
   }
 
-  const response = await post<CreateArticleAssetResponse>(apiToken, `/assets/article`, {
+  const response = await post<CreateArticleAssetResponse>(apiToken, `assets/article`, {
     body: form,
     headers: form.getHeaders()
   })

@@ -6,6 +6,6 @@ interface ListSitesOptions {
 }
 
 export async function listSites(apiToken: string, options?: ListSitesOptions) {
-  const response = await get<ListSitesResponse>(apiToken, '/sites', options)
+  const response = await get<ListSitesResponse>(apiToken, 'sites', options)
   return response.body
 }

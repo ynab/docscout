@@ -28,7 +28,7 @@ export async function listArticlesInCollection(
   collectionId: string,
   options?: ListArticlesOptions
 ) {
-  const path = `/collections/${collectionId}/articles`
+  const path = `collections/${collectionId}/articles`
   const response = await get<ListArticlesResponse>(apiToken, path, options)
   return response.body
 }
@@ -38,7 +38,7 @@ export async function listArticlesInCategory(
   categoryId: string,
   options?: ListArticlesOptions
 ) {
-  const path = `/categories/${categoryId}/articles`
+  const path = `categories/${categoryId}/articles`
   const response = await get<ListArticlesResponse>(apiToken, path, options)
   return response.body
 }
@@ -53,7 +53,7 @@ export interface SearchArticlesOptions {
 }
 
 export async function searchArticles(apiToken: string, options: SearchArticlesOptions) {
-  const path = '/search/articles'
+  const path = 'search/articles'
   const response = await get<SearchArticlesResponse>(apiToken, path, options)
   return response.body
 }
@@ -70,7 +70,7 @@ export async function listRelatedArticles(
   articleId: string,
   options?: ListRelatedArticlesOptions
 ) {
-  const path = `/articles/${articleId}/related`
+  const path = `articles/${articleId}/related`
   const response = await get<ListRelatedArticlesResponse>(apiToken, path, options)
   return response.body
 }
@@ -80,7 +80,7 @@ export interface ListRevisionsOptions {
 }
 
 export async function listRevisions(apiToken: string, articleId: string, options?: ListRevisionsOptions) {
-  const path = `/articles/${articleId}/revisions`
+  const path = `articles/${articleId}/revisions`
   const response = await get<ListRevisionsResponse>(apiToken, path, options)
   return response.body
 }
@@ -94,13 +94,13 @@ export async function getArticle(
   articleIdOrNumber: string | number,
   options?: GetArticleOptions
 ) {
-  const path = `/articles/${articleIdOrNumber}`
+  const path = `articles/${articleIdOrNumber}`
   const response = await get<GetArticleResponse>(apiToken, path, options)
   return response.body
 }
 
 export async function getRevision(apiToken: string, revisionId: string) {
-  const path = `/revisions/${revisionId}`
+  const path = `revisions/${revisionId}`
   const response = await get<GetRevisionResponse>(apiToken, path)
   return response.body
 }
