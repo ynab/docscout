@@ -2,10 +2,7 @@ import got, { OptionsOfJSONResponseBody } from 'got'
 import merge from 'lodash/merge'
 import { URLSearchParams } from 'url'
 
-function requestOptions(
-  apiToken: string,
-  options: Partial<OptionsOfJSONResponseBody>
-): OptionsOfJSONResponseBody {
+function requestOptions(apiToken: string, options: Partial<OptionsOfJSONResponseBody>): OptionsOfJSONResponseBody {
   const authorizationToken = Buffer.from(`${apiToken}:X`).toString('base64')
   return merge(
     {

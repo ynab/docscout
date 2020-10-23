@@ -4,7 +4,7 @@ import {
   GetCollectionResponse,
   Collection,
   OrderParameter,
-  VisibilityParameter
+  VisibilityParameter,
 } from './types/helpscout-docs'
 
 export type CollectionSortParameter = 'number' | 'visibility' | 'order' | 'name' | 'createdAt' | 'updatedAt'

@@ -56,5 +56,6 @@ export class Client {
 
   public async searchArticles(options: articles.SearchArticlesOptions) {
     const envelope = await articles.searchArticles(this.apiToken, options)
+    return envelope.articles
   }
 }

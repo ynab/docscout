@@ -22,9 +22,7 @@ type CreateArticleAssetOptionsWithStream = CreateArticleAssetOptionsBase & {
   stream: Stream
 }
 
-export type CreateArticleAssetOptions =
-  | CreateArticleAssetOptionWithFilepath
-  | CreateArticleAssetOptionsWithStream
+export type CreateArticleAssetOptions = CreateArticleAssetOptionWithFilepath | CreateArticleAssetOptionsWithStream
 
 export async function createArticleAsset(apiToken: string, options: CreateArticleAssetOptions) {
   const form = new FormData()
@@ -43,7 +41,7 @@ export async function createArticleAsset(apiToken: string, options: CreateArticl
 
   const response = await post<CreateArticleAssetResponse>(apiToken, `assets/article`, {
     body: form,
-    headers: form.getHeaders()
+    headers: form.getHeaders(),
   })
 
   return response.body

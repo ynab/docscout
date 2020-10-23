@@ -7,7 +7,7 @@ import {
   ListRevisionsResponse,
   OrderParameter,
   SearchArticlesResponse,
-  VisibilityParameter
+  VisibilityParameter,
 } from './types/helpscout-docs'
 import { get } from './request'
 
@@ -23,21 +23,13 @@ export interface ListArticlesOptions {
   pageSize?: number
 }
 
-export async function listArticlesInCollection(
-  apiToken: string,
-  collectionId: string,
-  options?: ListArticlesOptions
-) {
+export async function listArticlesInCollection(apiToken: string, collectionId: string, options?: ListArticlesOptions) {
   const path = `collections/${collectionId}/articles`
   const response = await get<ListArticlesResponse>(apiToken, path, options)
   return response.body
 }
 
-export async function listArticlesInCategory(
-  apiToken: string,
-  categoryId: string,
-  options?: ListArticlesOptions
-) {
+export async function listArticlesInCategory(apiToken: string, categoryId: string, options?: ListArticlesOptions) {
   const path = `categories/${categoryId}/articles`
   const response = await get<ListArticlesResponse>(apiToken, path, options)
   return response.body
@@ -65,11 +57,7 @@ export interface ListRelatedArticlesOptions {
   order?: OrderParameter
 }
 
-export async function listRelatedArticles(
-  apiToken: string,
-  articleId: string,
-  options?: ListRelatedArticlesOptions
-) {
+export async function listRelatedArticles(apiToken: string, articleId: string, options?: ListRelatedArticlesOptions) {
   const path = `articles/${articleId}/related`
   const response = await get<ListRelatedArticlesResponse>(apiToken, path, options)
   return response.body
@@ -89,11 +77,7 @@ export interface GetArticleOptions {
   draft?: boolean
 }
 
-export async function getArticle(
-  apiToken: string,
-  articleIdOrNumber: string | number,
-  options?: GetArticleOptions
-) {
+export async function getArticle(apiToken: string, articleIdOrNumber: string | number, options?: GetArticleOptions) {
   const path = `articles/${articleIdOrNumber}`
   const response = await get<GetArticleResponse>(apiToken, path, options)
   return response.body

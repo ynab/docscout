@@ -9,11 +9,7 @@ interface ListCategoriesOptions {
   order?: OrderParameter
 }
 
-export async function listCategories(
-  apiToken: string,
-  collectionId: string,
-  options?: ListCategoriesOptions
-) {
+export async function listCategories(apiToken: string, collectionId: string, options?: ListCategoriesOptions) {
   const path = `collections/${collectionId}/categories`
   const response = await get<ListCategoriesResponse>(apiToken, path, options)
   return response.body
@@ -24,7 +20,7 @@ interface ListAllCategoriesOptions {
   order?: OrderParameter
 }
 
-async function listAllCategories(apiToken: string, collectionId: string, options?: ListAllCategoriesOptions) {
+export async function listAllCategories(apiToken: string, collectionId: string, options?: ListAllCategoriesOptions) {
   const categories: Category[] = []
   const baseOptions = Object.assign({}, options)
 

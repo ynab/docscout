@@ -15,7 +15,7 @@ if (apiToken) {
       const articlesEnvelope = await client.listArticlesInCollection(firstPublicCollection.id, {
         status: 'published',
         sort: 'updatedAt',
-        order: 'desc'
+        order: 'desc',
       })
 
       console.log(`Found ${articlesEnvelope.count} in ${articlesEnvelope.pages} pages`)
