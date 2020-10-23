@@ -13,5 +13,5 @@ export declare class Client {
     listCollections(options?: collections.ListCollectionsOptions): Promise<import("./types/helpscout-docs").ItemsCollectionEnvelope<import("./types/helpscout-docs").Collection>>;
     listRelatedArticles(articleId: string, options?: articles.ListRelatedArticlesOptions): Promise<import("./types/helpscout-docs").ItemsCollectionEnvelope<import("./types/helpscout-docs").ArticleRef>>;
     listRevisions(articleId: string, options?: articles.ListRevisionsOptions): Promise<import("./types/helpscout-docs").ItemsCollectionEnvelope<import("./types/helpscout-docs").ArticleRevisionRef>>;
-    searchArticles(options: articles.SearchArticlesOptions): Promise<void>;
+    searchArticles(options: articles.SearchArticlesOptions): Promise<import("./types/helpscout-docs").ItemsCollectionEnvelope<import("./types/helpscout-docs").ArticleSearch>>;
 }

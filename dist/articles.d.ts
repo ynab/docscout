@@ -1,4 +1,4 @@
-import { ArticleStatus, GetArticleResponse, GetRevisionResponse, ListRevisionsResponse, OrderParameter, VisibilityParameter } from './types/helpscout-docs';
+import { ArticleStatus, GetArticleResponse, GetRevisionResponse, ListArticlesResponse, ListRelatedArticlesResponse, ListRevisionsResponse, OrderParameter, SearchArticlesResponse, VisibilityParameter } from './types/helpscout-docs';
 declare type ArticleStatusParameter = 'all' | ArticleStatus;
 declare type ArticleSortParameter = 'number' | 'status' | 'name' | 'popularity' | 'createdAt' | 'updatedAt';
 export interface ListArticlesOptions {
@@ -8,8 +8,8 @@ export interface ListArticlesOptions {
     order?: OrderParameter;
     pageSize?: number;
 }
-export declare function listArticlesInCollection(apiToken: string, collectionId: string, options?: ListArticlesOptions): Promise<import("./types/helpscout-docs").ArticlesCollectionResponse<import("./types/helpscout-docs").ArticleRef>>;
-export declare function listArticlesInCategory(apiToken: string, categoryId: string, options?: ListArticlesOptions): Promise<import("./types/helpscout-docs").ArticlesCollectionResponse<import("./types/helpscout-docs").ArticleRef>>;
+export declare function listArticlesInCollection(apiToken: string, collectionId: string, options?: ListArticlesOptions): Promise<ListArticlesResponse>;
+export declare function listArticlesInCategory(apiToken: string, categoryId: string, options?: ListArticlesOptions): Promise<ListArticlesResponse>;
 export interface SearchArticlesOptions {
     page?: number;
     query: string;
@@ -18,14 +18,14 @@ export interface SearchArticlesOptions {
     status?: ArticleStatusParameter;
     visibility?: VisibilityParameter;
 }
-export declare function searchArticles(apiToken: string, options: SearchArticlesOptions): Promise<import("./types/helpscout-docs").ArticlesCollectionResponse<import("./types/helpscout-docs").ArticleSearch>>;
+export declare function searchArticles(apiToken: string, options: SearchArticlesOptions): Promise<SearchArticlesResponse>;
 export interface ListRelatedArticlesOptions {
     page?: number;
     status?: ArticleStatusParameter;
     sort?: ArticleSortParameter;
     order?: OrderParameter;
 }
-export declare function listRelatedArticles(apiToken: string, articleId: string, options?: ListRelatedArticlesOptions): Promise<import("./types/helpscout-docs").ArticlesCollectionResponse<import("./types/helpscout-docs").ArticleRef>>;
+export declare function listRelatedArticles(apiToken: string, articleId: string, options?: ListRelatedArticlesOptions): Promise<ListRelatedArticlesResponse>;
 export interface ListRevisionsOptions {
     page?: number;
 }
